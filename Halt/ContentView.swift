@@ -8,16 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showOnboarding = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+
+            InterruptionScreenSettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
+
+            ReadView()
+                .tabItem {
+                    Label("Read", systemImage: "book")
+                }
         }
-        .padding()
+        .onAppear {
+            if !UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
+                UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+                showOnboarding = true
+            }
+        }
+        .sheet(isPresented: $showOnboarding) {
+            OnBoardingView()
+        }
     }
 }
+
 
 #Preview {
     ContentView()

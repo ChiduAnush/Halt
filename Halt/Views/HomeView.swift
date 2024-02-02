@@ -1,0 +1,18 @@
+//
+//  HomeView.swift
+//  Halt
+//
+//  Created by Chidu Anush on 03/02/24.
+//
+
+import SwiftUI
+
+struct HomeView: View {
+    var body: some View {
+        Text("Hello, Home")
+    }
+}
+
+#Preview {
+    HomeView()
+}
