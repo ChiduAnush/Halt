@@ -17,7 +17,7 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             VStack{
-                
+                Spacer()
                 HomeTopNextEvent()
 
                 HomeViewQuote()
@@ -27,7 +27,8 @@ struct HomeView: View {
 
                 HomeAppsView()
 
-                
+                Spacer()
+                Spacer()
                 
             }
             

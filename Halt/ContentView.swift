@@ -38,7 +38,7 @@ struct ContentView: View {
 //        }
 //    }
     
-    
+    @State private var showOnboarding = false
     @State private var selectedTab: Tab = .house
     
     init(){
@@ -65,10 +65,18 @@ struct ContentView: View {
                 CustomTabBarView(selectedTab: $selectedTab)
             }
         }
+        .onAppear {
+            if !UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
+                UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+                showOnboarding = true
+            }
+        }
+        .sheet(isPresented: $showOnboarding) {
+            OnBoardingView()
+        }
+        
+        
     }
-    
-    
-    
 }
 
 

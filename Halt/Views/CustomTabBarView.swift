@@ -39,7 +39,7 @@ struct CustomTabBarView: View {
                     Spacer()
                 }
             }
-            .frame(width: nil, height: 60)
+            .frame(width: nil, height: 65)
             .background(.thinMaterial)
             .cornerRadius(20)
             .padding()
