@@ -17,12 +17,17 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             VStack{
+                Spacer()
                 HomeTopNextEvent()
+                Spacer()
+                Spacer()
                 HomeViewQuote()
                     .padding(.bottom)
+                Spacer()
                 HomeAppsView()
 
-
+                Spacer()
+                Spacer()
                 
                 
             }
@@ -107,7 +112,8 @@ struct AppInfoBox: View {
         }
         .frame(width: 150)
         .padding()
-        .background(Color(.systemFill))
+        .background(Color(.systemFill).opacity(0.5))
+        
         .cornerRadius(12)
 //        .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
         
@@ -115,21 +121,25 @@ struct AppInfoBox: View {
 }
 
 struct AddNewAppInfoBox: View {
-    
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
+        let backgroundColor: Color = colorScheme == .dark ? Color(.systemFill) : Color(.systemIndigo)
+            .opacity(colorScheme == .dark ? 1.0 : 0.3)
+        
         HStack{
             VStack(alignment: .leading, spacing: 10) {
                 Text("Add new")
                     .font(.headline)
                 Image(systemName: "plus.circle")
                     .font(.title)
-                    .foregroundColor(.secondary)
+//                    .foregroundColor(.secondary)
+                    .foregroundStyle(Color(.systemIndigo))
             }
             Spacer()
         }
         .frame(width: 150, height: 70)
         .padding()
-        .background(Color(.systemFill))
+        .background(Color(backgroundColor))
         .cornerRadius(12)
     }
 }
@@ -153,6 +163,6 @@ struct HomeAppsView: View {
     }
     
     private var foregroundColor: Color {
-            return colorScheme == .dark ? Color(.systemFill) : .black
+        return colorScheme == .dark ? Color(.systemGray) : .black
         }
 }
