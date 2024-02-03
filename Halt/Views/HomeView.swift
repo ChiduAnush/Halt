@@ -17,17 +17,14 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             VStack{
-                Spacer()
+                
                 HomeTopNextEvent()
-                Spacer()
-                Spacer()
+
                 HomeViewQuote()
                     .padding(.bottom)
-                Spacer()
+
                 HomeAppsView()
 
-                Spacer()
-                Spacer()
                 
                 
             }
@@ -122,6 +119,7 @@ struct AppInfoBox: View {
 
 struct AddNewAppInfoBox: View {
     @Environment(\.colorScheme) var colorScheme
+    @State private var showTutorial = false
     var body: some View {
         let backgroundColor: Color = colorScheme == .dark ? Color(.systemFill) : Color(.systemIndigo)
             .opacity(colorScheme == .dark ? 1.0 : 0.3)
@@ -141,6 +139,13 @@ struct AddNewAppInfoBox: View {
         .padding()
         .background(Color(backgroundColor))
         .cornerRadius(12)
+        .onTapGesture {
+            showTutorial = true
+        }
+        .sheet(isPresented: $showTutorial) {
+            TutorialView()
+        }
+
     }
 }
 
