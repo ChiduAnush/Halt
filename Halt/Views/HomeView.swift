@@ -22,6 +22,8 @@ struct HomeView: View {
 
                 HomeViewQuote()
                     .padding(.bottom)
+                    .padding(.vertical)
+                    .padding(.vertical)
 
                 HomeAppsView()
 
