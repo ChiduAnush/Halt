@@ -11,6 +11,7 @@ struct HomeView: View {
     var body: some View {
         
         
+        
         ZStack{
             LinearGradient(gradient: Gradient(colors: [Color(.systemIndigo).opacity(0.5), .clear]), startPoint: .topTrailing, endPoint: .bottom)
                 .ignoresSafeArea()
@@ -18,6 +19,12 @@ struct HomeView: View {
             VStack{
                 HomeTopNextEvent()
                 HomeViewQuote()
+                    .padding(.bottom)
+                HomeAppsView()
+
+
+                
+                
             }
             
         }
@@ -55,9 +62,7 @@ struct HomeViewQuote: View {
             }
             .padding(.leading)
             Spacer()
-
         }
-
     }
 }
 
@@ -73,7 +78,6 @@ struct HomeTopNextEvent: View {
                 Image(systemName: "chevron.down")
                     .font(.title3)
                     .foregroundStyle(Color(.systemIndigo))
-                    
             })
         }
         .padding(.horizontal)
@@ -82,9 +86,73 @@ struct HomeTopNextEvent: View {
             .padding(.horizontal)
             .padding(.horizontal)
             .padding(.vertical, 10)
-            .foregroundStyle(Color(.systemGray6))
-        
+            .foregroundStyle(Color(.secondarySystemFill))
+    }
+}
+
+struct AppInfoBox: View {
+    let appName:String
+    let interruptionCount:Int
+    
+    var body: some View {
+        HStack{
+            VStack(alignment: .leading, spacing: 10) {
+                Text(appName)
+                    .font(.headline)
+                Text("\(interruptionCount) times\nprevented")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
+            Spacer()
+        }
+        .frame(width: 150)
+        .padding()
+        .background(Color(.systemFill))
+        .cornerRadius(12)
+//        .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
         
     }
 }
 
+struct AddNewAppInfoBox: View {
+    
+    var body: some View {
+        HStack{
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Add new")
+                    .font(.headline)
+                Image(systemName: "plus.circle")
+                    .font(.title)
+                    .foregroundColor(.secondary)
+            }
+            Spacer()
+        }
+        .frame(width: 150, height: 70)
+        .padding()
+        .background(Color(.systemFill))
+        .cornerRadius(12)
+    }
+}
+
+struct HomeAppsView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    var body: some View {
+        
+        VStack(alignment:.leading){
+            Text("INTERRUPTED APPS")
+                .font(.subheadline)
+                .foregroundStyle(Color(foregroundColor))
+                .padding(.leading, 5)
+            HStack{
+                AppInfoBox(appName: "Youtube", interruptionCount: 5)
+                AddNewAppInfoBox()
+            }
+        }
+        
+    }
+    
+    private var foregroundColor: Color {
+            return colorScheme == .dark ? Color(.systemFill) : .black
+        }
+}
