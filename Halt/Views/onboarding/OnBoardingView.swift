@@ -77,7 +77,7 @@ struct OnBoardingView: View {
                 Spacer()
                 Spacer()
                 
-                NavigationLink(destination: HomeView()){
+                NavigationLink(destination: TutorialView()){
                     Text("Continue")
                         
                         .fontWeight(.medium)

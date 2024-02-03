@@ -18,6 +18,7 @@
 		13775F0B2B6D6CA2005FFD99 /* ReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775F0A2B6D6CA2005FFD99 /* ReadView.swift */; };
 		13775F0D2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775F0C2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift */; };
 		13775F0F2B6D6CC1005FFD99 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775F0E2B6D6CC1005FFD99 /* HomeView.swift */; };
+		13775F1D2B6D94A8005FFD99 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775F1C2B6D94A8005FFD99 /* TutorialView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		13775F0A2B6D6CA2005FFD99 /* ReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadView.swift; sourceTree = "<group>"; };
 		13775F0C2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionScreenSettingsView.swift; sourceTree = "<group>"; };
 		13775F0E2B6D6CC1005FFD99 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		13775F1C2B6D94A8005FFD99 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,12 +141,21 @@
 		13775F072B6D6A18005FFD99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				13775F082B6D6A36005FFD99 /* OnBoardingView.swift */,
+				13775F1B2B6D93DC005FFD99 /* onboarding */,
 				13775F0A2B6D6CA2005FFD99 /* ReadView.swift */,
 				13775F0C2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift */,
 				13775F0E2B6D6CC1005FFD99 /* HomeView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		13775F1B2B6D93DC005FFD99 /* onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				13775F082B6D6A36005FFD99 /* OnBoardingView.swift */,
+				13775F1C2B6D94A8005FFD99 /* TutorialView.swift */,
+			);
+			path = onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13775F1D2B6D94A8005FFD99 /* TutorialView.swift in Sources */,
 				13775F0B2B6D6CA2005FFD99 /* ReadView.swift in Sources */,
 				13775F092B6D6A36005FFD99 /* OnBoardingView.swift in Sources */,
 				13775F0D2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift in Sources */,
