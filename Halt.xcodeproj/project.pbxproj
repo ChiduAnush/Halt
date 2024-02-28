@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FBBE1602B8F4A980027917E /* InterruptionTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBBE15F2B8F4A980027917E /* InterruptionTasks.swift */; };
 		13775EDE2B6D68FB005FFD99 /* HaltApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775EDD2B6D68FB005FFD99 /* HaltApp.swift */; };
 		13775EE02B6D68FB005FFD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775EDF2B6D68FB005FFD99 /* ContentView.swift */; };
 		13775EE22B6D68FC005FFD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13775EE12B6D68FC005FFD99 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FBBE15F2B8F4A980027917E /* InterruptionTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionTasks.swift; sourceTree = "<group>"; };
 		13775EDA2B6D68FB005FFD99 /* Halt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13775EDD2B6D68FB005FFD99 /* HaltApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaltApp.swift; sourceTree = "<group>"; };
 		13775EDF2B6D68FB005FFD99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FBBE15E2B8F4A390027917E /* Interruptions */ = {
+			isa = PBXGroup;
+			children = (
+				0FBBE15F2B8F4A980027917E /* InterruptionTasks.swift */,
+			);
+			path = Interruptions;
+			sourceTree = "<group>";
+		};
 		13775ED12B6D68FA005FFD99 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		13775F072B6D6A18005FFD99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0FBBE15E2B8F4A390027917E /* Interruptions */,
 				13775F1B2B6D93DC005FFD99 /* onboarding */,
 				13775F0A2B6D6CA2005FFD99 /* ReadView.swift */,
 				13775F0C2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift */,
@@ -291,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBBE1602B8F4A980027917E /* InterruptionTasks.swift in Sources */,
 				13775F1D2B6D94A8005FFD99 /* TutorialView.swift in Sources */,
 				13775F0B2B6D6CA2005FFD99 /* ReadView.swift in Sources */,
 				13775F092B6D6A36005FFD99 /* OnBoardingView.swift in Sources */,
