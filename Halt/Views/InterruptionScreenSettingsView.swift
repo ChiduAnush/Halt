@@ -10,18 +10,23 @@ import SwiftUI
 struct InterruptionScreenSettingsView: View {
     
     
-    @State private var showText1 = false
-    @State private var showText2 = false
-    
-    @State private var showNewView = false
-    
-    
-    
     var body: some View {
         
-        Text("settings")
 
-        
+        VStack{
+            
+            InsightsTopNavBar()
+                .padding()
+            
+            
+            VStack{
+                Text("Insights")
+                    .font(.system(size: 50))
+                
+            }
+            
+            
+        }
         
         
         
@@ -31,4 +36,25 @@ struct InterruptionScreenSettingsView: View {
 
 #Preview {
     InterruptionScreenSettingsView()
+}
+
+struct InsightsTopNavBar: View {
+    var body: some View {
+        HStack{
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Image(systemName: "person.crop.circle")
+                    .font(.largeTitle)
+                    .foregroundStyle(Color(uiColor: .white))
+            })
+            
+            Spacer()
+            
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Image(systemName: "iphone.gen2.circle")
+                    .font(.largeTitle)
+                    .foregroundStyle(Color(uiColor: .white))
+            })
+        }
+        .padding(.horizontal)
+    }
 }
