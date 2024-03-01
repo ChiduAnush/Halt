@@ -13,9 +13,11 @@ struct InterruptionTasks: View {
         ZStack {
 
             Color(uiColor: .systemBackground)
+                .cornerRadius(40)
             
             LinearGradient(gradient: Gradient(colors: [Color(uiColor: .systemIndigo), Color(uiColor: .systemIndigo).opacity(0.65),  Color.clear]), startPoint: .topLeading, endPoint: .bottom)
-                        .edgesIgnoringSafeArea(.all)
+                .cornerRadius(40)
+                .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 25){
                 Spacer()
@@ -78,6 +80,7 @@ struct InterruptionTasks: View {
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                         Text("Continue to app")
                             .foregroundStyle(Color(uiColor: .systemIndigo))
+                            .padding(.bottom)
 //                           .frame(maxWidth: .infinity)
 //                           .padding(.vertical)
 //                           .background(Color(uiColor: .black).opacity(0.2))
