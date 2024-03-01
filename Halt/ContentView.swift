@@ -54,7 +54,7 @@ struct ContentView: View {
                 InterruptionScreenSettingsView()
                     .tag(Tab.gearshape)
                 
-                ReadView()
+                TaskHomeView()
                     .tag(Tab.archivebox)
                 
             }

@@ -1,18 +1,19 @@
+////
+////  ReadView.swift
+////  Halt
+////
+////  Created by Chidu Anush on 03/02/24.
+////
 //
-//  ReadView.swift
-//  Halt
+//import SwiftUI
 //
-//  Created by Chidu Anush on 03/02/24.
+//struct ReadView: View {
+//    var body: some View {
 //
-
-import SwiftUI
-
-struct ReadView: View {
-    var body: some View {
-        Text("Hello, Read")
-    }
-}
-
-#Preview {
-    ReadView()
-}
+//        TaskHomeView()
+//    }
+//}
+//
+//#Preview {
+//    ReadView()
+//}
