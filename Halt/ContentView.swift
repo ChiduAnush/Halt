@@ -46,17 +46,18 @@ struct ContentView: View {
     }
     
     var body: some View {
-        ZStack{
-            TabView(selection: $selectedTab){
+        ZStack {
+            if selectedTab == .house {
                 HomeView()
-                    .tag(Tab.house)
-                
+
+            }
+            if selectedTab == .gearshape {
                 InterruptionScreenSettingsView()
-                    .tag(Tab.gearshape)
-                
+
+            }
+            if selectedTab == .archivebox {
                 TaskHomeView()
-                    .tag(Tab.archivebox)
-                
+
             }
             
             
