@@ -49,18 +49,15 @@ struct ContentView: View {
         ZStack {
             if selectedTab == .house {
                 HomeView()
-                    .transition(.opacity)
-                    .animation(.default)
+
             }
             if selectedTab == .gearshape {
                 InterruptionScreenSettingsView()
-                    .transition(.opacity)
-                    .animation(.default)
+
             }
             if selectedTab == .archivebox {
                 TaskHomeView()
-                    .transition(.opacity)
-                    .animation(.default)
+
             }
             
             
