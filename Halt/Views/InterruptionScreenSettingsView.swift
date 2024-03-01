@@ -18,30 +18,31 @@ struct InterruptionScreenSettingsView: View {
             
             InsightsTopNavBar()
                 .padding(.vertical)
+//                .padding(.top, 20)
             
             
             InsightsTitleAndDesc()
             
             Divider()
                 .padding()
-                .padding(.vertical, 15)
+                .padding(.vertical, 10)
             
             
-            SectionView(title: "Screen time", insight: "5% decrease", color: .indigo)
-            
-            Divider()
-                .padding()
-                .padding(.vertical, 15)
-            
-            
-            SectionView(title: "Time Earned", insight: "5% decrease", color: .indigo)
+            SectionView(title: "Screen time", insight: "6% decrease", color: .systemPurple, completion: 0.6)
             
             Divider()
                 .padding()
-                .padding(.vertical, 15)
+                .padding(.vertical, 10)
             
             
-            SectionView(title: "bruh", insight: "5% decrease", color: .indigo)
+            SectionView(title: "Time Earned", insight: "4% decrease", color: .systemIndigo, completion: 0.4)
+            
+            Divider()
+                .padding()
+                .padding(.vertical, 10)
+            
+            
+            SectionView(title: "bruh", insight: "7.5% decrease", color: .systemYellow, completion: 0.75)
             
             
             
@@ -99,7 +100,8 @@ struct InsightsTitleAndDesc: View {
 struct SectionView: View {
     let title: String
     let insight: String
-    let color: Color
+    let color: UIColor
+    let completion: CGFloat
     
     var body: some View {
         HStack {
@@ -120,10 +122,25 @@ struct SectionView: View {
             Spacer()
             
             
-            Circle()
-                .frame(width: 10, height: 10)
-                .foregroundColor(color)
+            
+            ZStack{
+                Circle()
+                    .stroke(Color(uiColor: color).opacity(0.3), lineWidth: 10)
+                    .frame(width: 60, height: 60)
+                    .foregroundStyle(Color(uiColor: color))
+                
+                Circle()
+                    .trim(from: 0.0, to: completion)
+                    .stroke(Color(uiColor: color).opacity(1), style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                    .frame(width: 60, height: 60)
+                    .foregroundStyle(Color(uiColor: color))
+                    .rotationEffect(.degrees(-90))
+                    
+            }
+            
         }
-        .padding([.leading, .trailing])
+        .padding(.horizontal)
     }
 }
+
+
