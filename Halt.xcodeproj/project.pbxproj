@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F05F10B2B924FF90079E5CB /* StartInterruptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F05F10A2B924FF90079E5CB /* StartInterruptionView.swift */; };
 		0FB3B39E2B9076AA00989640 /* DynamicFilteredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB3B39D2B9076AA00989640 /* DynamicFilteredView.swift */; };
 		0FB3B3A02B9076D900989640 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB3B39F2B9076D900989640 /* NewTaskView.swift */; };
 		0FB3B3A32B90772D00989640 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB3B3A22B90772D00989640 /* TaskViewModel.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F05F10A2B924FF90079E5CB /* StartInterruptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartInterruptionView.swift; path = Halt/Views/Interruptions/StartInterruptionView.swift; sourceTree = SOURCE_ROOT; };
 		0FB3B39D2B9076AA00989640 /* DynamicFilteredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFilteredView.swift; sourceTree = "<group>"; };
 		0FB3B39F2B9076D900989640 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		0FB3B3A22B90772D00989640 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				0FBBE15F2B8F4A980027917E /* InterruptionTasks.swift */,
+				0F05F10A2B924FF90079E5CB /* StartInterruptionView.swift */,
 			);
 			path = interruptions;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F05F10B2B924FF90079E5CB /* StartInterruptionView.swift in Sources */,
 				0FBBE1602B8F4A980027917E /* InterruptionTasks.swift in Sources */,
 				13775F1D2B6D94A8005FFD99 /* TutorialView.swift in Sources */,
 				0FB3B39E2B9076AA00989640 /* DynamicFilteredView.swift in Sources */,
