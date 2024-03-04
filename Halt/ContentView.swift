@@ -41,6 +41,8 @@ struct ContentView: View {
     @State private var showOnboarding = false
     @State private var selectedTab: Tab = .house
     
+    @StateObject var viewModel = TwentyTwentyTwentyViewModel()
+    
     init(){
         UITabBar.appearance().isHidden = true
     }
@@ -52,7 +54,7 @@ struct ContentView: View {
 
             }
             if selectedTab == .gearshape {
-                InterruptionScreenSettingsView()
+                InterruptionScreenSettingsView(viewModel: viewModel)
 
             }
             if selectedTab == .archivebox {

@@ -9,21 +9,23 @@ import SwiftUI
 
 //struct twentytwenty: View {
 //    var body: some View {
-//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        Text("Hello, World!")
 //    }
 //}
 
-#Preview {
-    twentytwenty()
-}
+//#Preview {
+//    twentytwentyView()
+//}
 
 
 
 import SwiftUI
 import UserNotifications
 
-struct twentytwenty: View {
+struct twentytwentyView: View {
     @AppStorage("is202020Enabled") var is202020Enabled: Bool = false
+
+    @ObservedObject var viewModel: TwentyTwentyTwentyViewModel
 
     var body: some View {
         Toggle(isOn: $is202020Enabled, label: {
@@ -33,10 +35,15 @@ struct twentytwenty: View {
             if newValue {
                 print("feature enabled")
                 scheduleNotifications()
+                viewModel.showToast = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    viewModel.showToast = false
+                }
             } else {
                 UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             }
         }
+        
     }
 
     func scheduleNotifications() {
@@ -54,17 +61,7 @@ struct twentytwenty: View {
 
         center.add(repeatingRequest)
 
-        // Schedule the immediate notification
-        let immediateContent = UNMutableNotificationContent()
-        immediateContent.title = "20:20:20 Feature Enabled"
-        immediateContent.body = "The 20:20:20 feature is now enabled"
-        immediateContent.sound = UNNotificationSound.default
 
-        let immediateTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-
-        let immediateRequest = UNNotificationRequest(identifier: UUID().uuidString, content: immediateContent, trigger: immediateTrigger)
-
-        center.add(immediateRequest)
     }
 
 }

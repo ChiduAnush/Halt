@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct InterruptionScreenSettingsView: View {
-    
+    @ObservedObject var viewModel: TwentyTwentyTwentyViewModel
     
     var body: some View {
         
 
         ScrollView{
-   
+            
             
             InsightsTopNavBar()
                 .padding(.vertical)
-//                .padding(.top, 20)
+            //                .padding(.top, 20)
             
             
             InsightsTitleAndDesc()
@@ -48,11 +48,19 @@ struct InterruptionScreenSettingsView: View {
                 .padding()
                 .padding(.vertical, 10)
             
-            twentytwenty()
+            twentytwentyView(viewModel: viewModel)
                 .padding()
                 .padding(.bottom, 100)
             
         }
+            
+        if viewModel.showToast {
+            ToastView()
+                .offset(y: UIScreen.main.bounds.height/4)
+                .animation(.default)
+                .transition(.move(edge: .bottom))
+        }
+
         
         
         
@@ -60,9 +68,9 @@ struct InterruptionScreenSettingsView: View {
     }
 }
 
-#Preview {
-    InterruptionScreenSettingsView()
-}
+//#Preview {
+//    InterruptionScreenSettingsView()
+//}
 
 struct InsightsTopNavBar: View {
     var body: some View {

@@ -16,7 +16,9 @@
 		0FB3B3AB2B90793600989640 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB3B3AA2B90793600989640 /* ViewExtension.swift */; };
 		0FB3B3B22B90936E00989640 /* TaskHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB3B3B12B90936E00989640 /* TaskHomeView.swift */; };
 		0FBBE1602B8F4A980027917E /* InterruptionTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBBE15F2B8F4A980027917E /* InterruptionTasks.swift */; };
-		0FD8E3EF2B964FA20003E6B8 /* twentytwenty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8E3EE2B964FA20003E6B8 /* twentytwenty.swift */; };
+		0FD8E3EF2B964FA20003E6B8 /* twentytwentyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8E3EE2B964FA20003E6B8 /* twentytwentyView.swift */; };
+		0FD8E3F42B965B9C0003E6B8 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8E3F32B965B9C0003E6B8 /* ToastView.swift */; };
+		0FD8E3F62B96604E0003E6B8 /* twentytwentyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8E3F52B96604E0003E6B8 /* twentytwentyViewModel.swift */; };
 		13775EDE2B6D68FB005FFD99 /* HaltApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775EDD2B6D68FB005FFD99 /* HaltApp.swift */; };
 		13775EE02B6D68FB005FFD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775EDF2B6D68FB005FFD99 /* ContentView.swift */; };
 		13775EE22B6D68FC005FFD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13775EE12B6D68FC005FFD99 /* Assets.xcassets */; };
@@ -59,7 +61,9 @@
 		0FB3B3AA2B90793600989640 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		0FB3B3B12B90936E00989640 /* TaskHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHomeView.swift; sourceTree = "<group>"; };
 		0FBBE15F2B8F4A980027917E /* InterruptionTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionTasks.swift; sourceTree = "<group>"; };
-		0FD8E3EE2B964FA20003E6B8 /* twentytwenty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twentytwenty.swift; sourceTree = "<group>"; };
+		0FD8E3EE2B964FA20003E6B8 /* twentytwentyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twentytwentyView.swift; sourceTree = "<group>"; };
+		0FD8E3F32B965B9C0003E6B8 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		0FD8E3F52B96604E0003E6B8 /* twentytwentyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twentytwentyViewModel.swift; sourceTree = "<group>"; };
 		13775EDA2B6D68FB005FFD99 /* Halt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13775EDD2B6D68FB005FFD99 /* HaltApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaltApp.swift; sourceTree = "<group>"; };
 		13775EDF2B6D68FB005FFD99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -147,12 +151,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		0FD8E3EB2B9649CE0003E6B8 /* generalFeature */ = {
+		0FD8E3EB2B9649CE0003E6B8 /* twentyTwenty */ = {
 			isa = PBXGroup;
 			children = (
-				0FD8E3EE2B964FA20003E6B8 /* twentytwenty.swift */,
+				0FD8E3EE2B964FA20003E6B8 /* twentytwentyView.swift */,
+				0FD8E3F32B965B9C0003E6B8 /* ToastView.swift */,
+				0FD8E3F52B96604E0003E6B8 /* twentytwentyViewModel.swift */,
 			);
-			path = generalFeature;
+			path = twentyTwenty;
 			sourceTree = "<group>";
 		};
 		13775ED12B6D68FA005FFD99 = {
@@ -219,7 +225,7 @@
 		13775F072B6D6A18005FFD99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0FD8E3EB2B9649CE0003E6B8 /* generalFeature */,
+				0FD8E3EB2B9649CE0003E6B8 /* twentyTwenty */,
 				0F6A67942B919398004E666D /* taskManager */,
 				0F6A67932B919376004E666D /* interruptions */,
 				0F6A67922B9192C9004E666D /* onboarding */,
@@ -369,8 +375,10 @@
 				0FB3B3B22B90936E00989640 /* TaskHomeView.swift in Sources */,
 				13775F092B6D6A36005FFD99 /* OnBoardingView.swift in Sources */,
 				A18E70802B6E52E80023F515 /* CustomTabBarView.swift in Sources */,
+				0FD8E3F62B96604E0003E6B8 /* twentytwentyViewModel.swift in Sources */,
 				0FB3B3AB2B90793600989640 /* ViewExtension.swift in Sources */,
-				0FD8E3EF2B964FA20003E6B8 /* twentytwenty.swift in Sources */,
+				0FD8E3F42B965B9C0003E6B8 /* ToastView.swift in Sources */,
+				0FD8E3EF2B964FA20003E6B8 /* twentytwentyView.swift in Sources */,
 				0FB3B3A32B90772D00989640 /* TaskViewModel.swift in Sources */,
 				13775F0D2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift in Sources */,
 				0FB3B3A82B9078FC00989640 /* Persistance.swift in Sources */,
