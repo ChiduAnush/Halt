@@ -44,7 +44,13 @@ struct InterruptionScreenSettingsView: View {
             
             SectionView(title: "bruh", insight: "7.5% decrease", color: .systemYellow, completion: 0.75)
             
+            Divider()
+                .padding()
+                .padding(.vertical, 10)
             
+            twentytwenty()
+                .padding()
+                .padding(.bottom, 100)
             
         }
         
