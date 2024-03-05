@@ -56,7 +56,7 @@ struct UtilitiesView: View {
 
 struct UtilitiesViewQuote: View {
     var body: some View {
-        HStack{
+        HStack(alignment: .top){
             VStack(alignment: .leading, spacing: 5){
                 
                 Text("Time saved,")
@@ -74,9 +74,18 @@ struct UtilitiesViewQuote: View {
                 }
                 .padding(.leading, 2)
             }
-            .padding(.leading)
+//            .padding(.leading)
             Spacer()
+            NavigationLink(destination: InterruptionScreenSettingsView(), label: {
+                Image(systemName: "iphone.gen2.circle")
+                    .font(.largeTitle)
+                    .foregroundStyle(Color.primary)
+                    .opacity(0.8)
+
+            })
+            
         }
+        .padding(.horizontal)
     }
 }
 

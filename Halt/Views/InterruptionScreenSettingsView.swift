@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct InterruptionScreenSettingsView: View {
-    @ObservedObject var viewModel: TwentyTwentyTwentyViewModel
     
     var body: some View {
         
@@ -48,18 +47,18 @@ struct InterruptionScreenSettingsView: View {
                 .padding()
                 .padding(.vertical, 10)
             
-            twentytwentyView(viewModel: viewModel)
-                .padding()
-                .padding(.bottom, 100)
+//            twentytwentyView(viewModel: viewModel)
+//                .padding()
+//                .padding(.bottom, 100)
             
         }
             
-        if viewModel.showToast {
-            ToastView()
-                .offset(y: UIScreen.main.bounds.height/4)
-                .animation(.default)
-                .transition(.move(edge: .bottom))
-        }
+//        if viewModel.showToast {
+//            ToastView()
+//                .offset(y: UIScreen.main.bounds.height/4)
+//                .animation(.default)
+//                .transition(.move(edge: .bottom))
+//        }
 
         
         
@@ -69,7 +68,7 @@ struct InterruptionScreenSettingsView: View {
 }
 
 #Preview {
-    InterruptionScreenSettingsView(viewModel: TwentyTwentyTwentyViewModel())
+    InterruptionScreenSettingsView()
 }
 
 struct InsightsTopNavBar: View {
