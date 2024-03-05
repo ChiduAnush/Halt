@@ -9,6 +9,12 @@ import SwiftUI
 
 struct ToastView: View {
     var body: some View {
+        
+        
+        
+
+            
+        
         Text("20:20:20 feature enabled")
             .foregroundColor(.black)
             .padding()
@@ -19,6 +25,8 @@ struct ToastView: View {
             .shadow(color: .primary.opacity(0.06), radius: 5, x: 5, y: 5)
             .shadow(color: .primary.opacity(0.03), radius: 5, x: -5, y: -5)
             .frame(height: UIScreen.main.bounds.height/2)
+            .background(Color(uiColor: .systemBackground))
+
     }
 }
 

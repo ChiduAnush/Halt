@@ -13,9 +13,9 @@ import SwiftUI
 //    }
 //}
 
-//#Preview {
-//    twentytwentyView()
-//}
+#Preview {
+    twentytwentyView(viewModel: TwentyTwentyTwentyViewModel())
+}
 
 
 
@@ -28,22 +28,31 @@ struct twentytwentyView: View {
     @ObservedObject var viewModel: TwentyTwentyTwentyViewModel
 
     var body: some View {
-        Toggle(isOn: $is202020Enabled, label: {
-            Text("Enable 20:20:20 Feature")
-        })
-        .onChange(of: is202020Enabled) { newValue in
-            if newValue {
-                print("feature enabled")
-                scheduleNotifications()
-                viewModel.showToast = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    viewModel.showToast = false
+        List{
+            Section(footer: Text("The 20:20:20 feature is designed to help reduce eye strain.\n\nThe rule is simple: every 20 minutes, take a 20 second break and look at something at least 20 feet away from your eyes.")){
+                Toggle(isOn: $is202020Enabled, label: {
+                    Text("Enable 20:20:20 Feature")
+                })
+                .onChange(of: is202020Enabled) { newValue in
+                    if newValue {
+                        print("feature enabled")
+                        scheduleNotifications()
+                        viewModel.showToast = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            viewModel.showToast = false
+                        }
+                    } else {
+                        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                    }
                 }
-            } else {
-                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
             }
+            
+            
         }
         
+        
+        
+
     }
 
     func scheduleNotifications() {

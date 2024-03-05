@@ -68,9 +68,9 @@ struct InterruptionScreenSettingsView: View {
     }
 }
 
-//#Preview {
-//    InterruptionScreenSettingsView()
-//}
+#Preview {
+    InterruptionScreenSettingsView(viewModel: TwentyTwentyTwentyViewModel())
+}
 
 struct InsightsTopNavBar: View {
     var body: some View {

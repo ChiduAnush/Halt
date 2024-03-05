@@ -54,7 +54,8 @@ struct ContentView: View {
 
             }
             if selectedTab == .gearshape {
-                InterruptionScreenSettingsView(viewModel: viewModel)
+//                InterruptionScreenSettingsView(viewModel: viewModel)
+                UtilitiesView(viewModel: viewModel)
 
             }
             if selectedTab == .archivebox {
@@ -67,6 +68,14 @@ struct ContentView: View {
                 Spacer()
                 CustomTabBarView(selectedTab: $selectedTab)
             }
+            
+//            if viewModel.showToast {
+//                ToastView()
+//                    .offset(y: UIScreen.main.bounds.height/4)
+//                    .animation(.default)
+//                    .transition(.move(edge: .bottom))
+//                
+//            }
         }
         .onAppear {
             if !UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
