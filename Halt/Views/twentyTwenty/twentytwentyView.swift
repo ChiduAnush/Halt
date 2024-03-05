@@ -33,6 +33,7 @@ struct twentytwentyView: View {
                 Toggle(isOn: $is202020Enabled, label: {
                     Text("Enable 20:20:20 Feature")
                 })
+                .tint(Color(uiColor: .systemIndigo))
                 .onChange(of: is202020Enabled) { newValue in
                     if newValue {
                         print("feature enabled")
