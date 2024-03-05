@@ -25,12 +25,12 @@ struct OnBoardingView: View {
                 .padding(.vertical, 50)
                 
                 
-                VStack{
-                    HStack{
+                VStack(spacing: 10){
+                    HStack(){
                         Image(systemName: "macbook")
                             .font(.title)
                             .foregroundStyle(Color(.systemIndigo))
-                            .padding(.trailing, 10)
+//                            .padding(.trailing, 10)
                         VStack(alignment:.leading){
                             Text("Boost Productivity")
                                 .font(.callout)
@@ -43,11 +43,11 @@ struct OnBoardingView: View {
                     }
                     Spacer()
                     
-                    HStack{
+                    HStack(){
                         Image(systemName: "stopwatch")
                             .font(.title)
                             .foregroundStyle(Color(.systemIndigo))
-                            .padding(.horizontal)
+//                            .padding(.horizontal)
                         VStack(alignment:.leading){
                             Text("Reclaim your time")
                                 .font(.callout)
@@ -60,11 +60,11 @@ struct OnBoardingView: View {
                     }
                     Spacer()
                     
-                    HStack{
+                    HStack(){
                         Image(systemName: "pencil.line")
                             .font(.title)
                             .foregroundStyle(Color(.systemIndigo))
-                            .padding(.horizontal, 19)
+//                            .padding(.horizontal, 19)
                         VStack(alignment:.leading){
                             Text("Never forget")
                                 .font(.callout)
