@@ -20,6 +20,7 @@ struct UtilitiesView: View {
             ScrollView{
                 Spacer()
                 Spacer()
+                Spacer()
                 
                 
                 UtilitiesViewQuote()
@@ -39,7 +40,7 @@ struct UtilitiesView: View {
                 UtilitiestwentytwentySection(viewModel: viewModel)
                 
                 
-                
+                Spacer()
             }
         }
 
@@ -89,7 +90,7 @@ struct UtilitiesSuccessInterruptsNumberView: View {
                     Text("Successfull Interrupts")
                         .foregroundStyle(Color.secondary)
                     Text("\(numberOfSuccessfullInterrupts)")
-                        .font(.system(size: 80))
+                        .font(.system(size: 70))
                 }
                 
                 Text("Bravo! You have added around ") + Text("\(5 * numberOfSuccessfullInterrupts) mins").foregroundColor(Color(uiColor: .systemIndigo)).font(.system(size: 18)) + Text(" back into your life's clock.")
