@@ -29,7 +29,7 @@
 		13775EFB2B6D68FC005FFD99 /* HaltUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775EFA2B6D68FC005FFD99 /* HaltUITestsLaunchTests.swift */; };
 		13775F092B6D6A36005FFD99 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775F082B6D6A36005FFD99 /* OnBoardingView.swift */; };
 		13775F0B2B6D6CA2005FFD99 /* ReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775F0A2B6D6CA2005FFD99 /* ReadView.swift */; };
-		13775F0D2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775F0C2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift */; };
+		13775F0D2B6D6CB6005FFD99 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775F0C2B6D6CB6005FFD99 /* InsightsView.swift */; };
 		13775F0F2B6D6CC1005FFD99 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775F0E2B6D6CC1005FFD99 /* HomeView.swift */; };
 		13775F1D2B6D94A8005FFD99 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775F1C2B6D94A8005FFD99 /* TutorialView.swift */; };
 		A18E70802B6E52E80023F515 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18E707F2B6E52E80023F515 /* CustomTabBarView.swift */; };
@@ -78,7 +78,7 @@
 		13775EFA2B6D68FC005FFD99 /* HaltUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaltUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		13775F082B6D6A36005FFD99 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		13775F0A2B6D6CA2005FFD99 /* ReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadView.swift; sourceTree = "<group>"; };
-		13775F0C2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterruptionScreenSettingsView.swift; sourceTree = "<group>"; };
+		13775F0C2B6D6CB6005FFD99 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 		13775F0E2B6D6CC1005FFD99 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		13775F1C2B6D94A8005FFD99 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		A18E707F2B6E52E80023F515 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 				0F6A67932B919376004E666D /* interruptions */,
 				0F6A67922B9192C9004E666D /* onboarding */,
 				13775F0A2B6D6CA2005FFD99 /* ReadView.swift */,
-				13775F0C2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift */,
+				13775F0C2B6D6CB6005FFD99 /* InsightsView.swift */,
 				13775F0E2B6D6CC1005FFD99 /* HomeView.swift */,
 				A18E707F2B6E52E80023F515 /* CustomTabBarView.swift */,
 			);
@@ -392,7 +392,7 @@
 				0FD8E3F42B965B9C0003E6B8 /* ToastView.swift in Sources */,
 				0FD8E3EF2B964FA20003E6B8 /* twentytwentyView.swift in Sources */,
 				0FB3B3A32B90772D00989640 /* TaskViewModel.swift in Sources */,
-				13775F0D2B6D6CB6005FFD99 /* InterruptionScreenSettingsView.swift in Sources */,
+				13775F0D2B6D6CB6005FFD99 /* InsightsView.swift in Sources */,
 				0FB3B3A82B9078FC00989640 /* Persistance.swift in Sources */,
 				0FB3B3A62B90775E00989640 /* TaskManagement.xcdatamodeld in Sources */,
 				0FB3B3A02B9076D900989640 /* NewTaskView.swift in Sources */,

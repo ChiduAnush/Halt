@@ -76,7 +76,7 @@ struct UtilitiesViewQuote: View {
             }
 //            .padding(.leading)
             Spacer()
-            NavigationLink(destination: InterruptionScreenSettingsView(), label: {
+            NavigationLink(destination: InsightsView(), label: {
                 Image(systemName: "iphone.gen2.circle")
                     .font(.largeTitle)
                     .foregroundStyle(Color.primary)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InterruptionScreenSettingsView: View {
+struct InsightsView: View {
     
     var body: some View {
         
@@ -68,7 +68,7 @@ struct InterruptionScreenSettingsView: View {
 }
 
 #Preview {
-    InterruptionScreenSettingsView()
+    InsightsView()
 }
 
 struct InsightsTopNavBar: View {
