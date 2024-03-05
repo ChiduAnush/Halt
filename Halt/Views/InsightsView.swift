@@ -15,8 +15,8 @@ struct InsightsView: View {
         ScrollView{
             
             
-            InsightsTopNavBar()
-                .padding(.vertical)
+//            InsightsTopNavBar()
+//                .padding(.vertical)
             //                .padding(.top, 20)
             
             
@@ -50,6 +50,10 @@ struct InsightsView: View {
 //            twentytwentyView(viewModel: viewModel)
 //                .padding()
 //                .padding(.bottom, 100)
+            
+            Spacer()
+            Spacer()
+            Spacer()
             
         }
             
