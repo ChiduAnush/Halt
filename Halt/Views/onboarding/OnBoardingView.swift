@@ -120,7 +120,7 @@ struct OnBoardingView: View {
                         Spacer()
                         
                         VStack{
-                            Text("Welcome to Halt")
+                            Text("Welcome to Just a sec")
                                 .font(.title)
                                 .fontWeight(.bold)
                             
