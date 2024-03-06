@@ -25,7 +25,7 @@ struct StartInterruptionView: View {
             
             HStack{
                 VStack(alignment: .leading, spacing: 10){
-                    Text("Uh oh")
+                    Text("Just a sec!")
                         .font(.system(size: 50))
                         .offset(x: showUhOh ? 0 : -UIScreen.main.bounds.width/2)
                         .opacity(showUhOh ? 1 : 0)
@@ -36,7 +36,8 @@ struct StartInterruptionView: View {
                             
                         }
                     
-                    Text("Lorem ipsum set donor amit lorem\nipsum set donor amit")
+//                    Text("Lorem ipsum set donor amit lorem\nipsum set donor amit")
+                    Text("Let's take a mindful moment before diving in. You sure u wanna continue??")
                         .opacity(showUhOhDesc ? 1 : 0)
                         .offset(x: 1)
                 }
@@ -63,7 +64,7 @@ struct StartInterruptionView: View {
             
         }
         .onAppear{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.7) {
                 showInterruptionTasks = true
             }
         }
