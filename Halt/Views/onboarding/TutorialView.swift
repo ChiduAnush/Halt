@@ -129,7 +129,7 @@ struct TutorialView: View {
                 
             }
             .listStyle(.insetGrouped)
-            .navigationTitle("Set up \"Halt\"")
+            .navigationTitle("Set up \"Just a sec\"")
         }
 
 
