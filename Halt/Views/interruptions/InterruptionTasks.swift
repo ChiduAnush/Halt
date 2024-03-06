@@ -52,13 +52,13 @@ struct InterruptionTasks: View {
                 .padding(.horizontal)
                 
                 VStack(spacing: 15){
-                    InterruptionScreenTodoCardView()
+                    InterruptionScreenTodoCardView(todoTitle: "iOS Team Gmeet", todoDesc: "Update the pitch.")
                         .padding(.horizontal, 10)
                     
-                    InterruptionScreenTodoCardView()
+                    InterruptionScreenTodoCardView(todoTitle: "Update Resume", todoDesc: "Add SwiftUI in skillset.")
                         .padding(.horizontal, 10)
                     
-                    InterruptionScreenTodoCardView()
+                    InterruptionScreenTodoCardView(todoTitle: "Essay on Herbology", todoDesc: "Minimum 3 pages.")
                         .padding(.horizontal, 10)
                 }
                 
@@ -109,15 +109,19 @@ struct InterruptionTasks: View {
 
 
 struct InterruptionScreenTodoCardView: View {
+    
+    let todoTitle: String
+    let todoDesc: String
+    
     var body: some View {
             
         HStack{
             VStack(alignment: .leading, spacing: 5){
-                Text("Today's todo ")
+                Text(todoTitle)
                     .foregroundStyle(Color.white)
                     .fontWeight(.semibold)
                 
-                Text("Random description")
+                Text(todoDesc)
                     .foregroundStyle(Color.white)
                     .opacity(0.5)
                 
