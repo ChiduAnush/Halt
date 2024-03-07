@@ -34,14 +34,14 @@ struct InsightsView: View {
                 .padding(.vertical, 10)
             
             
-            SectionView(title: "Time Earned", insight: "4% decrease", color: .systemIndigo, completion: 0.4)
+            SectionView(title: "Time Earned", insight: "4% increase", color: .systemIndigo, completion: 0.4)
             
             Divider()
                 .padding()
                 .padding(.vertical, 10)
             
             
-            SectionView(title: "bruh", insight: "7.5% decrease", color: .systemYellow, completion: 0.75)
+            SectionView(title: "Tasks", insight: "You have completed 70% of your tasks", color: .systemYellow, completion: 0.75)
             
             Divider()
                 .padding()
