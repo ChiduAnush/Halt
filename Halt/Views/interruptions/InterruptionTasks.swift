@@ -65,7 +65,10 @@ struct InterruptionTasks: View {
                 Spacer()
                 
                 VStack(spacing: 15){
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        print("go bck")
+                        exit(0)
+                    }, label: {
                         Text("Go back")
                             .foregroundStyle(Color(uiColor: .white))
                             .frame(maxWidth: .infinity)

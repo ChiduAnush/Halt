@@ -45,6 +45,7 @@ struct HaltApp: App {
             
             
         }
+        .environmentObject(Intentmodel)
     }
 }
 
