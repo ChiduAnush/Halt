@@ -81,32 +81,91 @@ struct HomeViewQuote: View {
     }
 }
 
+//struct HomeTopNextEvent: View {
+//    let upcomingTask: Task?
+//    
+//    var body: some View {
+//        HStack{
+//            Image(systemName: "clock")
+//                .font(.title2)
+////            Text("iOS Team Gmeet")
+//            Text(upcomingTask?.taskTitle ?? "No upcoming tasks")
+//                .fontWeight(.medium)
+//            Spacer()
+//            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+//                Image(systemName: "chevron.down")
+//                    .font(.title3)
+//                    .foregroundStyle(Color(.systemIndigo))
+//            })
+//        }
+//        .padding(.horizontal)
+//        
+//        Divider()
+//            .padding(.horizontal)
+//            .padding(.horizontal)
+//            .padding(.vertical, 10)
+//            .foregroundStyle(Color(.secondarySystemFill))
+//    }
+//}
+
 struct HomeTopNextEvent: View {
     let upcomingTask: Task?
+    @State private var isExpanded: Bool = false // State variable to track the expansion
     
     var body: some View {
-        HStack{
-            Image(systemName: "clock")
-                .font(.title2)
-//            Text("iOS Team Gmeet")
-            Text(upcomingTask?.taskTitle ?? "No upcoming tasks")
-                .fontWeight(.medium)
-            Spacer()
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                Image(systemName: "chevron.down")
-                    .font(.title3)
-                    .foregroundStyle(Color(.systemIndigo))
-            })
+        VStack(alignment: .leading, spacing: 10) {
+            HStack{
+                Image(systemName: "clock")
+                    .font(.title2)
+                // title of the upcoming task
+                Text(upcomingTask?.taskTitle ?? "No upcoming task")
+                    .fontWeight(.medium)
+                Spacer()
+                Button(action: {
+                    withAnimation {
+                        isExpanded.toggle()
+                    }
+                }, label: {
+                    Image(systemName: "chevron.down")
+                        .font(.title3)
+                    // Rotate the arrow icon when expanded
+                        .rotationEffect(.degrees(isExpanded ? 180 : 0))
+                        .foregroundStyle(Color(.systemIndigo))
+                })
+            }
+            .padding(.horizontal)
+            
+            Divider()
+                .padding(.horizontal)
+                .padding(.horizontal)
+                .padding(.vertical, 10)
+                .foregroundStyle(Color(.secondarySystemFill))
+            
+            if isExpanded {
+                VStack(alignment: .leading, spacing: 5) {
+                    if let description = upcomingTask?.taskDescription {
+                        Text("\(description)")
+                            .font(.body)
+                            .foregroundColor(.secondary)
+                    }
+                    if let date = upcomingTask?.taskDate {
+                        Text("\(date, formatter: dateFormatter)")
+                            .font(.body)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .padding(.horizontal)
+            }
         }
-        .padding(.horizontal)
-        
-        Divider()
-            .padding(.horizontal)
-            .padding(.horizontal)
-            .padding(.vertical, 10)
-            .foregroundStyle(Color(.secondarySystemFill))
+    }
+    
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd, yyyy - hh:mm a"
+        return formatter
     }
 }
+
 
 struct AppInfoBox: View {
     let appName:String
