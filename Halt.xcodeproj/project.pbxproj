@@ -21,6 +21,8 @@
 		0FD8E3F62B96604E0003E6B8 /* twentytwentyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8E3F52B96604E0003E6B8 /* twentytwentyViewModel.swift */; };
 		0FD8E3F92B970E8F0003E6B8 /* UtilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8E3F82B970E8F0003E6B8 /* UtilitiesView.swift */; };
 		0FF306122B98623C0025E9DC /* MeditationArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF306112B98623C0025E9DC /* MeditationArticleView.swift */; };
+		133905822BAADF3200AFFDF2 /* IntentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133905812BAADF3200AFFDF2 /* IntentViewModel.swift */; };
+		133905842BAADFAE00AFFDF2 /* Intents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133905832BAADFAE00AFFDF2 /* Intents.swift */; };
 		13775EDE2B6D68FB005FFD99 /* HaltApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775EDD2B6D68FB005FFD99 /* HaltApp.swift */; };
 		13775EE02B6D68FB005FFD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775EDF2B6D68FB005FFD99 /* ContentView.swift */; };
 		13775EE22B6D68FC005FFD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13775EE12B6D68FC005FFD99 /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 		0FD8E3F52B96604E0003E6B8 /* twentytwentyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twentytwentyViewModel.swift; sourceTree = "<group>"; };
 		0FD8E3F82B970E8F0003E6B8 /* UtilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesView.swift; sourceTree = "<group>"; };
 		0FF306112B98623C0025E9DC /* MeditationArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationArticleView.swift; sourceTree = "<group>"; };
+		133905812BAADF3200AFFDF2 /* IntentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewModel.swift; sourceTree = "<group>"; };
+		133905832BAADFAE00AFFDF2 /* Intents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intents.swift; sourceTree = "<group>"; };
 		13775EDA2B6D68FB005FFD99 /* Halt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13775EDD2B6D68FB005FFD99 /* HaltApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaltApp.swift; sourceTree = "<group>"; };
 		13775EDF2B6D68FB005FFD99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			children = (
 				0FBBE15F2B8F4A980027917E /* InterruptionTasks.swift */,
 				0F05F10A2B924FF90079E5CB /* StartInterruptionView.swift */,
+				133905832BAADFAE00AFFDF2 /* Intents.swift */,
 			);
 			path = interruptions;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				0FB3B3A22B90772D00989640 /* TaskViewModel.swift */,
+				133905812BAADF3200AFFDF2 /* IntentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -395,12 +401,14 @@
 				0FB3B3AB2B90793600989640 /* ViewExtension.swift in Sources */,
 				0FD8E3F42B965B9C0003E6B8 /* ToastView.swift in Sources */,
 				0FD8E3EF2B964FA20003E6B8 /* twentytwentyView.swift in Sources */,
+				133905822BAADF3200AFFDF2 /* IntentViewModel.swift in Sources */,
 				0FB3B3A32B90772D00989640 /* TaskViewModel.swift in Sources */,
 				13775F0D2B6D6CB6005FFD99 /* InsightsView.swift in Sources */,
 				0FB3B3A82B9078FC00989640 /* Persistance.swift in Sources */,
 				0FB3B3A62B90775E00989640 /* TaskManagement.xcdatamodeld in Sources */,
 				0FB3B3A02B9076D900989640 /* NewTaskView.swift in Sources */,
 				13775F0F2B6D6CC1005FFD99 /* HomeView.swift in Sources */,
+				133905842BAADFAE00AFFDF2 /* Intents.swift in Sources */,
 				13775EE02B6D68FB005FFD99 /* ContentView.swift in Sources */,
 				13775EDE2B6D68FB005FFD99 /* HaltApp.swift in Sources */,
 			);
