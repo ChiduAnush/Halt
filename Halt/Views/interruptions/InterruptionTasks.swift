@@ -6,6 +6,25 @@
 //
 
 import SwiftUI
+import UIKit
+
+func openInstagram() {
+    let appURL = NSURL(string: "instagram://app")!
+    let webURL = NSURL(string: "https://instagram.com/")!
+    
+    let application = UIApplication.shared
+    print("enter func")
+    print(application.canOpenURL(appURL as URL))
+    if application.canOpenURL(appURL as URL) {
+        print("enter 1 if")
+        print("set to true")
+        application.open(appURL as URL)
+    } else {
+        // if Instagram app is not installed, open URL inside Safari
+        print("enter else")
+        application.open(webURL as URL)
+    }
+}
 
 struct InterruptionTasks: View {
     var body: some View {
@@ -80,7 +99,9 @@ struct InterruptionTasks: View {
                             
                     })
                     
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        openInstagram()
+                    }, label: {
                         Text("Continue to app")
                             .foregroundStyle(Color(uiColor: .systemIndigo))
                             .padding(.bottom)
