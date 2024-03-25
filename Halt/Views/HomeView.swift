@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HomeView: View {
+    
+    @StateObject var taskModel: TaskViewModel = TaskViewModel()
+    @State private var latestUpcomingTask: Task?
+    
     var body: some View {
         
         
@@ -18,7 +23,7 @@ struct HomeView: View {
             
             VStack{
                 Spacer()
-                HomeTopNextEvent()
+                HomeTopNextEvent(upcomingTask: latestUpcomingTask)
 
                 HomeViewQuote()
                     .padding(.bottom)
@@ -32,6 +37,11 @@ struct HomeView: View {
                 
             }
             
+        }
+        .onAppear {
+            taskModel.fetchLatestUpcomingTask { task in
+                latestUpcomingTask = task
+            }
         }
         
         
@@ -72,11 +82,14 @@ struct HomeViewQuote: View {
 }
 
 struct HomeTopNextEvent: View {
+    let upcomingTask: Task?
+    
     var body: some View {
         HStack{
             Image(systemName: "clock")
                 .font(.title2)
-            Text("iOS Team Gmeet")
+//            Text("iOS Team Gmeet")
+            Text(upcomingTask?.taskTitle ?? "No upcoming tasks")
                 .fontWeight(.medium)
             Spacer()
             Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {

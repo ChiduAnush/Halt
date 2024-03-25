@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 class TaskViewModel: ObservableObject {
   
@@ -21,6 +22,26 @@ class TaskViewModel: ObservableObject {
     // Edit task
     @Published var editTask: Task?
     
+    
+    // Core Data context
+    let context = PersistenceController.shared.container.viewContext
+
+        // MARK: - Fetch latest upcoming task
+    func fetchLatestUpcomingTask(completion: @escaping (Task?) -> Void) {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        request.predicate = NSPredicate(format: "taskDate > %@", Date() as NSDate)
+        request.sortDescriptors = [NSSortDescriptor(key: "taskDate", ascending: true)]
+        request.fetchLimit = 1
+        
+        do {
+            let tasks = try context.fetch(request)
+            completion(tasks.first)
+        } catch {
+            print("Error fetching upcoming task: \(error.localizedDescription)")
+            completion(nil)
+        }
+    }
+
     
     //MARK: - Init
     init() {
