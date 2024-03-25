@@ -29,7 +29,7 @@ class TaskViewModel: ObservableObject {
         // MARK: - Fetch latest upcoming task
     func fetchLatestUpcomingTask(completion: @escaping (Task?) -> Void) {
         let request: NSFetchRequest<Task> = Task.fetchRequest()
-        request.predicate = NSPredicate(format: "taskDate > %@ AND isCompleted == %@" , Date() as NSDate, NSNumber(value: false))
+        request.predicate = NSPredicate(format: "taskDate > %@" , Date() as NSDate)
         request.sortDescriptors = [NSSortDescriptor(key: "taskDate", ascending: true)]
         request.fetchLimit = 1
         
@@ -57,6 +57,26 @@ class TaskViewModel: ObservableObject {
 //            completion(nil)
 //        }
 //    }
+    
+    func fetchTodayTasks(completion: @escaping ([Task]) -> Void) {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        
+        // Create a predicate to filter tasks for today's date
+        let calendar = Calendar.current
+        let startOfDay = calendar.startOfDay(for: Date())
+        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+        let predicate = NSPredicate(format: "taskDate >= %@ AND taskDate < %@", startOfDay as NSDate, endOfDay as NSDate)
+        
+        request.predicate = predicate
+        
+        do {
+            let tasks = try context.fetch(request)
+            completion(tasks)
+        } catch {
+            print("Error fetching today's tasks: \(error.localizedDescription)")
+            completion([])
+        }
+    }
 
     
     //MARK: - Init
