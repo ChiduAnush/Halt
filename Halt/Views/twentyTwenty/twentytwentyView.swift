@@ -14,7 +14,8 @@ import SwiftUI
 //}
 
 #Preview {
-    twentytwentyView(viewModel: TwentyTwentyTwentyViewModel())
+//    twentytwentyView(viewModel: TwentyTwentyTwentyViewModel())
+    twentytwentyView()
 }
 
 
@@ -25,7 +26,7 @@ import UserNotifications
 struct twentytwentyView: View {
     @AppStorage("is202020Enabled") var is202020Enabled: Bool = false
 
-    @ObservedObject var viewModel: TwentyTwentyTwentyViewModel
+//    @ObservedObject var viewModel: TwentyTwentyTwentyViewModel
 
     var body: some View {
         List{
@@ -38,10 +39,10 @@ struct twentytwentyView: View {
                     if newValue {
                         print("feature enabled")
                         scheduleNotifications()
-                        viewModel.showToast = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            viewModel.showToast = false
-                        }
+//                        viewModel.showToast = true
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                            viewModel.showToast = false
+//                        }
                     } else {
                         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                     }

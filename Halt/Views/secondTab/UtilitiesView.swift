@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UtilitiesView: View {
     
-    @ObservedObject var viewModel: TwentyTwentyTwentyViewModel
+//    @ObservedObject var viewModel: TwentyTwentyTwentyViewModel
     
     
     var body: some View {
@@ -37,7 +37,8 @@ struct UtilitiesView: View {
                     .padding(.vertical, 10)
                 
                 
-                UtilitiestwentytwentySection(viewModel: viewModel)
+//                UtilitiestwentytwentySection(viewModel: viewModel)
+                UtilitiestwentytwentySection()
                 
                 
                 Spacer()
@@ -50,7 +51,8 @@ struct UtilitiesView: View {
 }
 
 #Preview {
-    UtilitiesView(viewModel: TwentyTwentyTwentyViewModel())
+//    UtilitiesView(viewModel: TwentyTwentyTwentyViewModel())
+    UtilitiesView()
 }
 
 
@@ -126,14 +128,15 @@ struct UtilitiesSuccessInterruptsNumberView: View {
 
 struct UtilitiestwentytwentySection: View {
     
-    @ObservedObject var viewModel: TwentyTwentyTwentyViewModel
+//    @ObservedObject var viewModel: TwentyTwentyTwentyViewModel
     
     var body: some View {
         HStack{
             VStack(alignment: .leading){
                 Text("Eye Health")
                     .foregroundStyle(Color.secondary)
-                NavigationLink(destination: twentytwentyView(viewModel: viewModel)) {
+//                NavigationLink(destination: twentytwentyView(viewModel: viewModel)) {
+                NavigationLink(destination: twentytwentyView()) {
                     HStack{
                         Text("20:20:20")
                             .font(.body)

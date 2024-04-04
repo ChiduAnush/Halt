@@ -55,7 +55,9 @@ struct ContentView: View {
             }
             if selectedTab == .gearshape {
 //                InterruptionScreenSettingsView(viewModel: viewModel)
-                UtilitiesView(viewModel: viewModel)
+//                UtilitiesView(viewModel: viewModel)
+                UtilitiesView()
+
 
             }
             if selectedTab == .archivebox {
