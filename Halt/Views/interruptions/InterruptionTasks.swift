@@ -27,6 +27,10 @@ func openInstagram() {
 }
 
 struct InterruptionTasks: View {
+    
+    @StateObject var taskModel: TaskViewModel = TaskViewModel()
+    @State private var todayTasks: [Task] = []
+    @State private var shouldShowTasks: Bool = false
     var body: some View {
         
         ZStack {
@@ -59,10 +63,19 @@ struct InterruptionTasks: View {
                         Text("Thats the time you have spent already today on just entertainment.")
                             .foregroundStyle(Color.white)
                         
-                        Text("You got these tasks yet to finish !")
-                            .foregroundStyle(Color(uiColor: .white))
-                            .opacity(0.5)
-                            .padding(.top, 25)
+                        if !todayTasks.isEmpty {
+                            Text("You got these tasks yet to finish !")
+                                .foregroundStyle(Color(uiColor: .white))
+                                .opacity(0.5)
+                                .padding(.top, 25)
+                        } else {
+                            Text("You dont have any tasks for today. Maybe try spending time meditating, or reading a book?")
+                                .foregroundStyle(Color(uiColor: .white))
+                                .opacity(0.5)
+                                .padding(.top, 25)
+                        }
+                        
+                        
                         
                     }
                     
@@ -70,16 +83,24 @@ struct InterruptionTasks: View {
                 }
                 .padding(.horizontal)
                 
-                VStack(spacing: 15){
-                    InterruptionScreenTodoCardView(todoTitle: "iOS Team Gmeet", todoDesc: "Update the pitch.")
-                        .padding(.horizontal, 10)
-                    
-                    InterruptionScreenTodoCardView(todoTitle: "Update Resume", todoDesc: "Add SwiftUI in skillset.")
-                        .padding(.horizontal, 10)
-                    
-                    InterruptionScreenTodoCardView(todoTitle: "Essay on Herbology", todoDesc: "Minimum 3 pages.")
-                        .padding(.horizontal, 10)
+                ScrollView{
+                    VStack(spacing: 15){
+    //                    InterruptionScreenTodoCardView(todoTitle: "iOS Team Gmeet", todoDesc: "Update the pitch.")
+    //                        .padding(.horizontal, 10)
+    //
+    //                    InterruptionScreenTodoCardView(todoTitle: "Update Resume", todoDesc: "Add SwiftUI in skillset.")
+    //                        .padding(.horizontal, 10)
+    //
+    //                    InterruptionScreenTodoCardView(todoTitle: "Essay on Herbology", todoDesc: "Minimum 3 pages.")
+    //                        .padding(.horizontal, 10)
+                        
+                        ForEach(todayTasks) { task in
+                            InterruptionScreenTodoCardView(todoTitle: task.taskTitle ?? "", todoDesc: task.taskDescription ?? "")
+                                .padding(.horizontal, 10)
+                        }
+                    }
                 }
+                .opacity(shouldShowTasks ? 1 : 0)
                 
                 Spacer()
                 
@@ -118,6 +139,15 @@ struct InterruptionTasks: View {
 
             }
             .padding(.horizontal, 5)
+            .onAppear {
+                // Fetch today's tasks when the view appears
+                taskModel.fetchTodayTasks { tasks in
+                    todayTasks = tasks
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    shouldShowTasks = true
+                }
+            }
             
         }
         
