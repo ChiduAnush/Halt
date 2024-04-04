@@ -36,55 +36,55 @@ struct WaterArticleView: View {
                         .padding(.top,10)
                     
                     Text("Water is vital for our health. It should always be your go-to beverage.")
-                    .padding(.top,10)
+                        .padding(.top,10)
                     Text("Hydrate yourself just like the cactus does in monsoon.")
                         .padding(.top,10)
                         .font(.headline)
-
+                    
                     Text("It is necessary to have 8 glasses of water in a day. Now, it's your time to add a glass of water to your daily count.")
                         .padding(.top,10)
-//                    Text("Water Intake")
-//                        .font(.title)
-//                        .padding(.top,10)
-//                    ZStack{
-//                        Rectangle()
-//                            .frame(width: 50, height: 100)
-//                            .foregroundColor(.gray.opacity(0.2))
-//                        Rectangle()
-//                            .frame(width: 50, height: calculateWaterHeight())
-//                            .foregroundColor(.blue)
-//                            .cornerRadius(10)
-//
-//                    }
-//                    Text("Glasses of Water: \(waterCount)")
-//                        .font(.headline)
-//                    HStack {
-//                        Button(action: {
-//                            incrementWaterCount()
-//                        }) {
-//                            Text("Add Water")
-//                                .padding()
-//                                .background(Color.blue)
-//                                .foregroundColor(.white)
-//                                .cornerRadius(10)
-//                        }
-//
-//                        Button(action: {
-//                            decrementWaterCount()
-//                        }) {
-//                            Text("Remove Water")
-//                                .padding()
-//                                .background(Color.red)
-//                                .foregroundColor(.white)
-//                                .cornerRadius(10)
-//                        }
-//                    }
-
+                    //                    Text("Water Intake")
+                    //                        .font(.title)
+                    //                        .padding(.top,10)
+                    //                    ZStack{
+                    //                        Rectangle()
+                    //                            .frame(width: 50, height: 100)
+                    //                            .foregroundColor(.gray.opacity(0.2))
+                    //                        Rectangle()
+                    //                            .frame(width: 50, height: calculateWaterHeight())
+                    //                            .foregroundColor(.blue)
+                    //                            .cornerRadius(10)
+                    //
+                    //                    }
+                    //                    Text("Glasses of Water: \(waterCount)")
+                    //                        .font(.headline)
+                    //                    HStack {
+                    //                        Button(action: {
+                    //                            incrementWaterCount()
+                    //                        }) {
+                    //                            Text("Add Water")
+                    //                                .padding()
+                    //                                .background(Color.blue)
+                    //                                .foregroundColor(.white)
+                    //                                .cornerRadius(10)
+                    //                        }
+                    //
+                    //                        Button(action: {
+                    //                            decrementWaterCount()
+                    //                        }) {
+                    //                            Text("Remove Water")
+                    //                                .padding()
+                    //                                .background(Color.red)
+                    //                                .foregroundColor(.white)
+                    //                                .cornerRadius(10)
+                    //                        }
+                    //                    }
                     
-                                    }
+                    
+                }
                 
             }
-            .padding()
+            
         }
     }
     
