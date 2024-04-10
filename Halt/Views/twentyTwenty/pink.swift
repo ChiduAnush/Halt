@@ -31,26 +31,27 @@ struct pink: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                         
                         playSound()
+//                        showAlert = true
                         self.showBlank = false
-                        showAlert = true
+                        
                         
                     }
                 })
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Congratulations!"), message: Text("You have successfully completed the 20:20:20 rule. Keep it up!"), dismissButton: .default(Text("Awesome!")))
-                }
+//                .alert(isPresented: $showAlert) {
+//                    Alert(title: Text("Congratulations!"), message: Text("You have successfully completed the 20:20:20 rule. Keep it up!"), dismissButton: .default(Text("Awesome!")))
+//                }
             
             VStack{
                 
                 
                 if showText {
-                    Text("Look away from your phone till you hear a bell.")
+                    Text("For the next 20 seconds, your world is bigger than this screen.")
                         .font(.subheadline)
                         .foregroundColor(.white)
                         .opacity(showText ? 1 : 0)
                         .offset(x: showText ? 0 : -UIScreen.main.bounds.width/2)
                     
-                    Text("Look at somethng at least 20 ft away from your eyes.")
+                    Text("Give your eyes a break and relax.")
                         .font(.subheadline)
                         .foregroundColor(.white)
                         .opacity(showText ? 1 : 0)
