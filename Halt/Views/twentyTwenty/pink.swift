@@ -10,23 +10,55 @@ import AVFoundation
 
 struct pink: View {
     
+    @State private var showText = false
+    @State private var showAlert = false
+    
     @AppStorage("showBlank") var showBlank: Bool = false
     
     var body: some View {
         
-        
-        Color.pink
-            .ignoresSafeArea()
-            .onAppear(perform: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        ZStack{
+            
+            
+            
+            Color.black
+                .ignoresSafeArea()
+                .onAppear(perform: {
                     
-                    playSound()
-                    self.showBlank = false
-                    
+                    withAnimation(.easeIn(duration: 2.0)) {
+                        showText = true
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        
+                        playSound()
+                        self.showBlank = false
+                        showAlert = true
+                        
+                    }
+                })
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Congratulations!"), message: Text("You have successfully completed the 20:20:20 rule. Keep it up!"), dismissButton: .default(Text("Awesome!")))
                 }
-            })
+            
+            VStack{
                 
-
+                
+                if showText {
+                    Text("Look away from your phone till you hear a bell.")
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                        .opacity(showText ? 1 : 0)
+                        .offset(x: showText ? 0 : -UIScreen.main.bounds.width/2)
+                    
+                    Text("Look at somethng at least 20 ft away from your eyes.")
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                        .opacity(showText ? 1 : 0)
+                        .offset(x: showText ? 0 : -UIScreen.main.bounds.width/2)
+                }
+            }
+            
+        }
         
     }
     
@@ -44,6 +76,6 @@ struct pink: View {
     
 }
 
-//#Preview {
-//    pink()
-//}
+#Preview {
+    pink()
+}
