@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
-
 import UserNotifications
+import AVFoundation
 
+var player: AVAudioPlayer?
 
 @main
 struct HaltApp: App {
@@ -17,33 +18,57 @@ struct HaltApp: App {
     @StateObject var Intentmodel = IntentViewModel.shared
     
     @StateObject private var notificationHandler = NotificationHandler()
+    @AppStorage("showBlank") var showBlank: Bool = false
+
+//    @State private var player: AVAudioPlayer?
 
     var body: some Scene {
         WindowGroup {
             
-            if Intentmodel.showStartInterruptionView {
-                StartInterruptionView()
-            } else {
-                ContentView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    .onAppear(perform: {
-                        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-                            if let error = error {
-                                // Handle the error here.
-                                print("Error: \(error)")
+            if showBlank {
+                pink()
+//                    .onAppear(perform: {
+//                        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+//                            playSound()
+//                            self.showBlank = false
+//                        }
+//                    })
+                    .onDisappear(perform: {
+                        playSound()
+                    })
+
+            } else{
+                
+                
+                
+                if Intentmodel.showStartInterruptionView {
+                    StartInterruptionView()
+                } else {
+                    ContentView()
+                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                        .onAppear(perform: {
+                            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                                if let error = error {
+                                    // Handle the error here.
+                                    print("Error: \(error)")
+                                }
+                                
+                                // Enable or disable features based on the authorization.
+                                if granted {
+                                    print("Notification permission granted.")
+                                } else {
+                                    print("Notification permission denied because: \(error?.localizedDescription ?? "unknown reason").")
+                                }
                             }
                             
-                            // Enable or disable features based on the authorization.
-                            if granted {
-                                print("Notification permission granted.")
-                            } else {
-                                print("Notification permission denied because: \(error?.localizedDescription ?? "unknown reason").")
-                            }
-                        }
-
-                    })
-                    .environmentObject(notificationHandler)
+                        })
+                        .environmentObject(notificationHandler)
+                }
+                
+                
+                
             }
+            
             
             
             
@@ -51,7 +76,21 @@ struct HaltApp: App {
         .environmentObject(Intentmodel)
 
     }
+    
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "cheerful-527", withExtension: "mp3") else { return }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            print("Unable to play sound")
+        }
+    }
+    
+
 }
+
 
 
 class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterDelegate {

@@ -22,6 +22,9 @@
 		0FD8E3F62B96604E0003E6B8 /* twentytwentyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8E3F52B96604E0003E6B8 /* twentytwentyViewModel.swift */; };
 		0FD8E3F92B970E8F0003E6B8 /* UtilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD8E3F82B970E8F0003E6B8 /* UtilitiesView.swift */; };
 		0FF306122B98623C0025E9DC /* MeditationArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF306112B98623C0025E9DC /* MeditationArticleView.swift */; };
+		1313B9552BC7315100D998C1 /* that-was-quick-606.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1313B9542BC7315100D998C1 /* that-was-quick-606.mp3 */; };
+		1313B9572BC73C1C00D998C1 /* pink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1313B9562BC73C1C00D998C1 /* pink.swift */; };
+		1313B9592BC74E6100D998C1 /* cheerful-527.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1313B9582BC74E6100D998C1 /* cheerful-527.mp3 */; };
 		133905822BAADF3200AFFDF2 /* IntentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133905812BAADF3200AFFDF2 /* IntentViewModel.swift */; };
 		133905842BAADFAE00AFFDF2 /* Intents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133905832BAADFAE00AFFDF2 /* Intents.swift */; };
 		13775EDE2B6D68FB005FFD99 /* HaltApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13775EDD2B6D68FB005FFD99 /* HaltApp.swift */; };
@@ -73,6 +76,9 @@
 		0FD8E3F82B970E8F0003E6B8 /* UtilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesView.swift; sourceTree = "<group>"; };
 		0FF306112B98623C0025E9DC /* MeditationArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationArticleView.swift; sourceTree = "<group>"; };
 		1313B9522BC7195400D998C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1313B9542BC7315100D998C1 /* that-was-quick-606.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "that-was-quick-606.mp3"; sourceTree = "<group>"; };
+		1313B9562BC73C1C00D998C1 /* pink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pink.swift; sourceTree = "<group>"; };
+		1313B9582BC74E6100D998C1 /* cheerful-527.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cheerful-527.mp3"; sourceTree = "<group>"; };
 		133905812BAADF3200AFFDF2 /* IntentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewModel.swift; sourceTree = "<group>"; };
 		133905832BAADFAE00AFFDF2 /* Intents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intents.swift; sourceTree = "<group>"; };
 		13775EDA2B6D68FB005FFD99 /* Halt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +176,7 @@
 				0FD8E3EE2B964FA20003E6B8 /* twentytwentyView.swift */,
 				0FD8E3F32B965B9C0003E6B8 /* ToastView.swift */,
 				0FD8E3F52B96604E0003E6B8 /* twentytwentyViewModel.swift */,
+				1313B9562BC73C1C00D998C1 /* pink.swift */,
 			);
 			path = twentyTwenty;
 			sourceTree = "<group>";
@@ -182,6 +189,15 @@
 				0FACECA22BBE8F6A00AA3B72 /* WaterArticleView.swift */,
 			);
 			path = secondTab;
+			sourceTree = "<group>";
+		};
+		1313B9532BC72FD500D998C1 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1313B9542BC7315100D998C1 /* that-was-quick-606.mp3 */,
+				1313B9582BC74E6100D998C1 /* cheerful-527.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		13775ED12B6D68FA005FFD99 = {
@@ -207,6 +223,7 @@
 		13775EDC2B6D68FB005FFD99 /* Halt */ = {
 			isa = PBXGroup;
 			children = (
+				1313B9532BC72FD500D998C1 /* Sounds */,
 				1313B9522BC7195400D998C1 /* Info.plist */,
 				0FB3B3A42B90775E00989640 /* TaskManagement.xcdatamodeld */,
 				0FB3B3A72B9078FC00989640 /* Persistance.swift */,
@@ -367,7 +384,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				13775EE52B6D68FC005FFD99 /* Preview Assets.xcassets in Resources */,
+				1313B9552BC7315100D998C1 /* that-was-quick-606.mp3 in Resources */,
 				13775EE22B6D68FC005FFD99 /* Assets.xcassets in Resources */,
+				1313B9592BC74E6100D998C1 /* cheerful-527.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +426,7 @@
 				0FB3B3AB2B90793600989640 /* ViewExtension.swift in Sources */,
 				0FD8E3F42B965B9C0003E6B8 /* ToastView.swift in Sources */,
 				0FD8E3EF2B964FA20003E6B8 /* twentytwentyView.swift in Sources */,
+				1313B9572BC73C1C00D998C1 /* pink.swift in Sources */,
 				133905822BAADF3200AFFDF2 /* IntentViewModel.swift in Sources */,
 				0FB3B3A32B90772D00989640 /* TaskViewModel.swift in Sources */,
 				13775F0D2B6D6CB6005FFD99 /* InsightsView.swift in Sources */,
