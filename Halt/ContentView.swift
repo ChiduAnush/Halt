@@ -38,6 +38,8 @@ struct ContentView: View {
 //        }
 //    }
     
+    @EnvironmentObject var notificationHandler: NotificationHandler
+    
     @State private var showOnboarding = false
     @State private var selectedTab: Tab = .house
     
@@ -48,47 +50,55 @@ struct ContentView: View {
     }
     
     var body: some View {
-        ZStack {
-            if selectedTab == .house {
-                HomeView()
-
-            }
-            if selectedTab == .gearshape {
-//                InterruptionScreenSettingsView(viewModel: viewModel)
-//                UtilitiesView(viewModel: viewModel)
-                UtilitiesView()
-
-
-            }
-            if selectedTab == .archivebox {
-                TaskHomeView()
-
-            }
-            
-            
-            VStack{
-                Spacer()
-                CustomTabBarView(selectedTab: $selectedTab)
-            }
-            
-//            if viewModel.showToast {
-//                ToastView()
-//                    .offset(y: UIScreen.main.bounds.height/4)
-//                    .animation(.default)
-//                    .transition(.move(edge: .bottom))
-//                
-//            }
-        }
-        .onAppear {
-            if !UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
-                UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
-                showOnboarding = true
-            }
-        }
-        .sheet(isPresented: $showOnboarding) {
-            OnBoardingView()
-        }
         
+        if notificationHandler.showNotificationView{
+            twentytwentyView()
+        } else{
+            
+            
+            
+            ZStack {
+                if selectedTab == .house {
+                    HomeView()
+                    
+                }
+                if selectedTab == .gearshape {
+                    //                InterruptionScreenSettingsView(viewModel: viewModel)
+                    //                UtilitiesView(viewModel: viewModel)
+                    UtilitiesView()
+                    
+                    
+                }
+                if selectedTab == .archivebox {
+                    TaskHomeView()
+                    
+                }
+                
+                
+                VStack{
+                    Spacer()
+                    CustomTabBarView(selectedTab: $selectedTab)
+                }
+                
+                //            if viewModel.showToast {
+                //                ToastView()
+                //                    .offset(y: UIScreen.main.bounds.height/4)
+                //                    .animation(.default)
+                //                    .transition(.move(edge: .bottom))
+                //
+                //            }
+            }
+            .onAppear {
+                if !UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
+                    UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+                    showOnboarding = true
+                }
+            }
+            .sheet(isPresented: $showOnboarding) {
+                OnBoardingView()
+            }
+            
+        }
         
     }
 }

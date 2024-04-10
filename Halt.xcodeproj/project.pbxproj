@@ -72,6 +72,7 @@
 		0FD8E3F52B96604E0003E6B8 /* twentytwentyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twentytwentyViewModel.swift; sourceTree = "<group>"; };
 		0FD8E3F82B970E8F0003E6B8 /* UtilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesView.swift; sourceTree = "<group>"; };
 		0FF306112B98623C0025E9DC /* MeditationArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationArticleView.swift; sourceTree = "<group>"; };
+		1313B9522BC7195400D998C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		133905812BAADF3200AFFDF2 /* IntentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewModel.swift; sourceTree = "<group>"; };
 		133905832BAADFAE00AFFDF2 /* Intents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intents.swift; sourceTree = "<group>"; };
 		13775EDA2B6D68FB005FFD99 /* Halt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +207,7 @@
 		13775EDC2B6D68FB005FFD99 /* Halt */ = {
 			isa = PBXGroup;
 			children = (
+				1313B9522BC7195400D998C1 /* Info.plist */,
 				0FB3B3A42B90775E00989640 /* TaskManagement.xcdatamodeld */,
 				0FB3B3A72B9078FC00989640 /* Persistance.swift */,
 				0FB3B3AE2B907D4800989640 /* Extensions */,
@@ -581,6 +583,7 @@
 				DEVELOPMENT_TEAM = T4BMQCL9WR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Halt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -610,6 +613,7 @@
 				DEVELOPMENT_TEAM = T4BMQCL9WR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Halt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
