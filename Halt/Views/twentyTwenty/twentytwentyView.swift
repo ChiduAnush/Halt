@@ -105,11 +105,11 @@ struct twentytwentyView: View {
                 
                 Button(action: {
                     self.showBlank = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                        
-                        self.showBlank = false
-                        
-                    }
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//                        
+//                        self.showBlank = false
+//                        
+//                    }
                 }) {
                     Text("Start 20:20:20")
                 }

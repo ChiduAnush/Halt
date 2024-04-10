@@ -33,9 +33,9 @@ struct HaltApp: App {
 //                            self.showBlank = false
 //                        }
 //                    })
-                    .onDisappear(perform: {
-                        playSound()
-                    })
+//                    .onDisappear(perform: {
+//                        playSound()
+//                    })
 
             } else{
                 
@@ -93,8 +93,29 @@ struct HaltApp: App {
 
 
 
+//class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterDelegate {
+//    @Published var showNotificationView = false
+//
+//    override init() {
+//        super.init()
+//        UNUserNotificationCenter.current().delegate = self
+//    }
+//
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+//        // Check the identifier of the notification action
+//        if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
+//            // The user tapped on the notification, show the notification view
+//            DispatchQueue.main.async {
+//                self.showNotificationView = true
+//            }
+//        }
+//        completionHandler()
+//    }
+//}
+
 class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterDelegate {
     @Published var showNotificationView = false
+    @AppStorage("showBlank") var showBlank: Bool = false
 
     override init() {
         super.init()
@@ -104,11 +125,26 @@ class NotificationHandler: NSObject, ObservableObject, UNUserNotificationCenterD
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // Check the identifier of the notification action
         if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
-            // The user tapped on the notification, show the notification view
+            // The user tapped on the notification, show the blank screen
             DispatchQueue.main.async {
-                self.showNotificationView = true
+                self.showBlank = true
+                Timer.scheduledTimer(withTimeInterval: 20, repeats: false) { _ in
+                    self.playSound()
+                    self.showBlank = false
+                }
             }
         }
         completionHandler()
+    }
+
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "cheerful-527", withExtension: "mp3") else { return }
+
+        do {
+            let player = try AVAudioPlayer(contentsOf: url)
+            player.play()
+        } catch {
+            print("Unable to play sound")
+        }
     }
 }
