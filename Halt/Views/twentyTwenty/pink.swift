@@ -17,6 +17,8 @@ struct pink: View {
     
     @AppStorage("successCount") var successCount: Int = 0
     
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some View {
         
         ZStack{
@@ -25,6 +27,13 @@ struct pink: View {
             
             Color.black
                 .ignoresSafeArea()
+                .onChange(of: scenePhase) { newScenePhase in
+                    if newScenePhase == .inactive || newScenePhase == .background {
+                        self.showBlank = false
+                        print("u missed it man.")
+                        self.successCount -= 1
+                    }
+                }
                 .onAppear(perform: {
                     
                     withAnimation(.easeIn(duration: 2.0)) {
@@ -35,6 +44,7 @@ struct pink: View {
                         playSound()
 //                        showAlert = true
                         self.showBlank = false
+       
                         self.successCount += 1
                         
                         

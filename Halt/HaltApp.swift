@@ -19,6 +19,9 @@ struct HaltApp: App {
     
     @StateObject private var notificationHandler = NotificationHandler()
     @AppStorage("showBlank") var showBlank: Bool = false
+    
+    @AppStorage("successCount") var successCount: Int = 0
+    @Environment(\.scenePhase) private var scenePhase
 
 //    @State private var player: AVAudioPlayer?
 
@@ -27,6 +30,18 @@ struct HaltApp: App {
             
             if showBlank {
                 pink()
+//                    .onAppear {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+//                            if scenePhase == .active {
+//                                self.successCount += 1
+//                            }
+//                            if scenePhase == .inactive || scenePhase == .background{
+//                                print("inactive ho gya bhai")
+//                                self.showBlank = false
+//                            }
+////                            self.showBlank = false
+//                        }
+//                    }
 //                    .onAppear(perform: {
 //                        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
 //                            playSound()
