@@ -19,9 +19,13 @@ struct pink: View {
     
     @Environment(\.scenePhase) var scenePhase
     
+    @State private var progress = 0.0
+    
     var body: some View {
         
         ZStack{
+            
+            
             
             
             
@@ -59,18 +63,37 @@ struct pink: View {
                     Alert(title: Text("Failed"), message: Text("You didn't finish the 20 seconds."), dismissButton: .default(Text("OK")))
                 }
             
-            VStack(spacing: 10){
-                
+            VStack(spacing: 25){
+
+                GeometryReader { geometry in
+                    ZStack(alignment: .leading) {
+                        Rectangle()
+                            .foregroundColor(Color(uiColor: .systemFill))
+                            .frame(width: geometry.size.width , height: geometry.size.height)
+                        Rectangle()
+                            .foregroundColor(Color(uiColor: .systemIndigo))
+//                            .frame(height: geometry.size.height)
+                            .frame(width: progress * geometry.size.width)
+                            .animation(.linear(duration: 10), value: progress)
+                    }
+                    .cornerRadius(50.0)
+                }
+                .frame(height: 10)
+                .padding()
+                .padding()
+                .onAppear {
+                    progress = 1.0
+                }
                 
                 if showText {
-                    Text("For the next 20 seconds, your world is bigger than this screen.")
+                    Text("Your world is much bigger than this screen")
                         .font(.subheadline)
                         .foregroundColor(.white)
                         .opacity(showText ? 1 : 0)
                         .offset(x: showText ? 0 : -UIScreen.main.bounds.width/2)
                         .multilineTextAlignment(.center)
                     
-                    Text("Give your eyes a break and relax.")
+                    Text("Give your eyes some rest")
                         .font(.subheadline)
                         .foregroundColor(.white)
                         .opacity(showText ? 1 : 0)
