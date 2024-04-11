@@ -7,11 +7,14 @@
 
 import SwiftUI
 import AVFoundation
+import ConfettiSwiftUI
 
 struct pink: View {
     
     @State private var showText = false
     @State private var showAlert = false
+    
+    @State private var showCongrats = false
     
     @AppStorage("showBlank") var showBlank: Bool = false
     
@@ -20,6 +23,8 @@ struct pink: View {
     @Environment(\.scenePhase) var scenePhase
     
     @State private var progress = 0.0
+    
+    @AppStorage("confettiCounter") var confettiCounter: Int = 0
     
     var body: some View {
         
@@ -46,8 +51,14 @@ struct pink: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
                         
                         playSound()
+                        confettiCounter += 1
+                        self.showCongrats = true
 //                        showAlert = true
-                        self.showBlank = false
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                            self.showBlank = false
+                        }
+//                        self.showBlank = false
        
                         self.successCount += 1
                         
@@ -85,17 +96,25 @@ struct pink: View {
                     progress = 1.0
                 }
                 
+                ConfettiCannon(counter: $confettiCounter)
+                
                 if showText {
+                    
+                    Text("Kuddos!")
+                        .foregroundColor(.white)
+                        .opacity(showCongrats ? 1 : 0)
+
+                    
                     Text("Your world is much bigger than this screen")
                         .font(.subheadline)
-                        .foregroundColor(.white)
+                        .foregroundColor(showCongrats ? Color(uiColor: .systemFill) : .white)
                         .opacity(showText ? 1 : 0)
                         .offset(x: showText ? 0 : -UIScreen.main.bounds.width/2)
                         .multilineTextAlignment(.center)
                     
                     Text("Give your eyes some rest")
                         .font(.subheadline)
-                        .foregroundColor(.white)
+                        .foregroundColor(showCongrats ? Color(uiColor: .systemFill) : .white)
                         .opacity(showText ? 1 : 0)
                         .offset(x: showText ? 0 : -UIScreen.main.bounds.width/2)
                 }
