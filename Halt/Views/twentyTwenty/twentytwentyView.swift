@@ -85,6 +85,8 @@ struct twentytwentyView: View {
     @AppStorage("is202020Enabled") var is202020Enabled: Bool = false
     @AppStorage("showBlank") var showBlank: Bool = false
 //    @State private var player: AVAudioPlayer?
+    
+    @AppStorage("successCount") var successCount: Int = 0
 
     var body: some View {
         
@@ -114,6 +116,10 @@ struct twentytwentyView: View {
                     Text("Start 20:20:20")
                 }
             }
+            
+            Text("You have successfully completed the 20:20:20 rule \(successCount) times!")
+                .padding()
+                            
         }
         
     }

@@ -15,6 +15,8 @@ struct pink: View {
     
     @AppStorage("showBlank") var showBlank: Bool = false
     
+    @AppStorage("successCount") var successCount: Int = 0
+    
     var body: some View {
         
         ZStack{
@@ -28,20 +30,26 @@ struct pink: View {
                     withAnimation(.easeIn(duration: 2.0)) {
                         showText = true
                     }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
                         
                         playSound()
 //                        showAlert = true
                         self.showBlank = false
+                        self.successCount += 1
                         
                         
                     }
                 })
-//                .alert(isPresented: $showAlert) {
-//                    Alert(title: Text("Congratulations!"), message: Text("You have successfully completed the 20:20:20 rule. Keep it up!"), dismissButton: .default(Text("Awesome!")))
-//                }
+                .onDisappear {
+                    if showBlank {
+                        showAlert = true
+                    }
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Failed"), message: Text("You didn't finish the 20 seconds."), dismissButton: .default(Text("OK")))
+                }
             
-            VStack{
+            VStack(spacing: 10){
                 
                 
                 if showText {
@@ -50,6 +58,7 @@ struct pink: View {
                         .foregroundColor(.white)
                         .opacity(showText ? 1 : 0)
                         .offset(x: showText ? 0 : -UIScreen.main.bounds.width/2)
+                        .multilineTextAlignment(.center)
                     
                     Text("Give your eyes a break and relax.")
                         .font(.subheadline)
