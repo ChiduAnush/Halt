@@ -2,10 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSUserActivityTypes</key>
+	<key>CFBundleURLTypes</key>
 	<array>
-		<string>Intent2Intent</string>
-		<string>IntentIntent</string>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>chiduanush.Halt</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>halt</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>
