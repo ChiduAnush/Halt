@@ -235,7 +235,7 @@ struct HomeAppsView: View {
                 .foregroundStyle(Color(foregroundColor))
                 .padding(.leading, 5)
             HStack{
-                AppInfoBox(appName: "Youtube", interruptionCount: 5)
+                AppInfoBox(appName: "Instagram", interruptionCount: 5)
                 AddNewAppInfoBox()
             }
         }
